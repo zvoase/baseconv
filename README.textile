@@ -24,7 +24,7 @@ h3. Using the Library In Your Code
 
 In order to carry out the most common features of base conversion, the library
 comes equipped with the pre-defined bases @DECIMAL@, @BINARY@, @HEXADECIMAL@,
-@OCTAL@, @ALPHA\_LOWER@, @ALPHA\_UPPER@ and @ALPHA@. This means you can, out
+@OCTAL@, @ALPHA_LOWER@, @ALPHA_UPPER@ and @ALPHA@. This means you can, out
 of the box, convert between all of these bases. An example usage case is shown
 below; note that numbers are held as instances of the @baseconv.Number@ class,
 and bases as @baseconv.Base@ instances. The attributes @decimal@, @base@,
@@ -32,29 +32,29 @@ and bases as @baseconv.Base@ instances. The attributes @decimal@, @base@,
 changing one will cause the number's other attributes to update. The following
 code sample shows how you might use the library in a basic way:
 
-	&gt;&gt;&gt; from baseconv import \*
-	&gt;&gt;&gt; num = BINARY('1010011010') # Create a number
-	&gt;&gt;&gt; num # Show the representation of a number
+	>>> from baseconv import \*
+	>>> num = BINARY('1010011010') # Create a number
+	>>> num # Show the representation of a number
 	Number(BINARY, '1010011010')
-	&gt;&gt;&gt; num.decimal
+	>>> num.decimal
 	666
-	&gt;&gt;&gt; num.decimal = 423 # Change a number's decimal value
-	&gt;&gt;&gt; num # The number's binary value has changed automatically
+	>>> num.decimal = 423 # Change a number's decimal value
+	>>> num # The number's binary value has changed automatically
 	Number(BINARY, '110100111')
-	&gt;&gt;&gt; num.base = HEXADECIMAL # Change a number's base
-	&gt;&gt;&gt; num
+	>>> num.base = HEXADECIMAL # Change a number's base
+	>>> num
 	Number(HEXADECIMAL, '1A7')
-	&gt;&gt;&gt; print num # Print a number as a string; also accessible via str(num)
+	>>> print num # Print a number as a string; also accessible via str(num)
 	0x1A7
-	&gt;&gt;&gt; num.values # The sequence of base-words that this number represents
+	>>> num.values # The sequence of base-words that this number represents
 	'1A7'
-	&gt;&gt;&gt; num.values = 'FFC0DE' # Set this numbers values list
-	&gt;&gt;&gt; num # Number has changed accordingly
+	>>> num.values = 'FFC0DE' # Set this numbers values list
+	>>> num # Number has changed accordingly
 	Number(HEXADECIMAL, 'FFC0DE')
-	&gt;&gt;&gt; num.indices # The decimal value of each word in this number
+	>>> num.indices # The decimal value of each word in this number
 	[15, 15, 12, 0, 13, 14]
-	&gt;&gt;&gt; num.indices = [1, 10, 7] # Set this number's indices attribute
-	&gt;&gt;&gt; num
+	>>> num.indices = [1, 10, 7] # Set this number's indices attribute
+	>>> num
 	Number(HEXADECIMAL, '1A7')
 
 h2. About the Author
