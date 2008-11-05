@@ -32,32 +32,30 @@ and bases as @baseconv.Base@ instances. The attributes @decimal@, @base@,
 changing one will cause the number's other attributes to update. The following
 code sample shows how you might use the library in a basic way:
 
-\\\
-	>>> from baseconv import \*
-	>>> num = BINARY('1010011010') # Create a number
-	>>> num # Show the representation of a number
+	&gt;&gt;&gt; from baseconv import \*
+	&gt;&gt;&gt; num = BINARY('1010011010') # Create a number
+	&gt;&gt;&gt; num # Show the representation of a number
 	Number(BINARY, '1010011010')
-	>>> num.decimal
+	&gt;&gt;&gt; num.decimal
 	666
-	>>> num.decimal = 423 # Change a number's decimal value
-	>>> num # The number's binary value has changed automatically
+	&gt;&gt;&gt; num.decimal = 423 # Change a number's decimal value
+	&gt;&gt;&gt; num # The number's binary value has changed automatically
 	Number(BINARY, '110100111')
-	>>> num.base = HEXADECIMAL # Change a number's base
-	>>> num
+	&gt;&gt;&gt; num.base = HEXADECIMAL # Change a number's base
+	&gt;&gt;&gt; num
 	Number(HEXADECIMAL, '1A7')
-	>>> print num # Print a number as a string; also accessible via str(num)
+	&gt;&gt;&gt; print num # Print a number as a string; also accessible via str(num)
 	0x1A7
-	>>> num.values # The sequence of base-words that this number represents
+	&gt;&gt;&gt; num.values # The sequence of base-words that this number represents
 	'1A7'
-	>>> num.values = 'FFC0DE' # Set this numbers values list
-	>>> num # Number has changed accordingly
+	&gt;&gt;&gt; num.values = 'FFC0DE' # Set this numbers values list
+	&gt;&gt;&gt; num # Number has changed accordingly
 	Number(HEXADECIMAL, 'FFC0DE')
-	>>> num.indices # The decimal value of each word in this number
+	&gt;&gt;&gt; num.indices # The decimal value of each word in this number
 	[15, 15, 12, 0, 13, 14]
-	>>> num.indices = [1, 10, 7] # Set this number's indices attribute
-	>>> num
+	&gt;&gt;&gt; num.indices = [1, 10, 7] # Set this number's indices attribute
+	&gt;&gt;&gt; num
 	Number(HEXADECIMAL, '1A7')
-\\\
 
 h2. About the Author
 
