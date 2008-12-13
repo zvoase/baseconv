@@ -266,6 +266,6 @@ ALPHA_UPPER = Base('ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'ALPHA_UPPER')
 ALPHA = Base('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz', 'ALPHA')
 BYTES = Base(''.join(chr(i) for i in xrange(256)), 'BYTES')
 
-if __name__ = '__main__':
+if __name__ == '__main__':
     import doctest
     doctest.testmod()
