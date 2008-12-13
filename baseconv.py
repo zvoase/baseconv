@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import copy
-
 
 class Base(object):
     
@@ -70,7 +68,7 @@ class Base(object):
     def from_decimal(self, decimal):
         """Convert a Python ``int`` into a ``Number`` of this base."""
         # Get a ``DECIMAL`` instance, and just change its base.
-        new = self()
+        new = self([])
         new.decimal = decimal
         return new
     
@@ -189,7 +187,7 @@ class Number(object):
         # Pretty simple; the number's decimal value won't change, and then the
         # other parts will fall into place when re-setting this via the
         # descriptor.
-        old_decimal = copy.copy(self.decimal)
+        old_decimal = self.decimal + 0
         self.__base = base
         self.decimal = old_decimal
     
@@ -202,7 +200,7 @@ class Number(object):
     def __set_decimal(self, decimal):
         indices = []
         # Copy it to stop this method from mutating another variable.
-        number = copy.copy(decimal)
+        number = decimal + 0
         while number:
             indices.insert(0, number % self.base.length)
             number = number // self.base.length
@@ -266,3 +264,8 @@ OCTAL.format = (
 ALPHA_LOWER = Base('abcdefghijklmnopqrstuvwxyz', 'ALPHA_LOWER')
 ALPHA_UPPER = Base('ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'ALPHA_UPPER')
 ALPHA = Base('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz', 'ALPHA')
+BYTES = Base(''.join(chr(i) for i in xrange(256)), 'BYTES')
+
+if __name__ = '__main__':
+    import doctest
+    doctest.testmod()
